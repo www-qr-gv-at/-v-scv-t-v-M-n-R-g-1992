@@ -130,11 +130,20 @@ FOOTER{
 	testdatum.setDate(testdatum.getDate() - 1)
 	testdatum.setHours (8);
 	testdatum.setMinutes (35);
-	testdatum.setSeconds(0);
-	datumstring=testdatum.toLocaleString();
-	datumstring = datumstring.replace(", "," ");
-	datumstring = datumstring.replace(":00","");
-	document.getElementsByTagName('span')[0].innerHTML = datumstring;	
+	tag=testdatum.getDate();
+	monat=(testdatum.getMonth()+1);
+	jahr=testdatum.getFullYear();
+	if((String(tag)).length==1)
+    tag='0'+tag;
+    if((String(monat)).length==1)
+    monat='0'+monat;
+	stunden=testdatum.getHours();
+	if((String(stunden)).length==1)
+    stunden='0'+stunden;
+	minuten=testdatum.getMinutes();
+	if((String(minuten)).length==1)
+    minuten='0'+minuten;
+	document.getElementsByTagName('span')[0].innerHTML = tag + '.' + monat + '.' + jahr + ' ' + stunden + ':' + minuten;	
 </script>
 
 <strong> vor 8 Stunden</strong></dd>
@@ -160,11 +169,20 @@ FOOTER{
 	ablaufdatum.setDate(ablaufdatum.getDate() + 1)
 	ablaufdatum.setHours (8);
 	ablaufdatum.setMinutes (35);
-	ablaufdatum.setSeconds(0);
-	datumstring=ablaufdatum.toLocaleString();
-	datumstring = datumstring.replace(", "," ");
-	datumstring = datumstring.replace(":00","");
-	document.getElementsByTagName('span')[1].innerHTML = datumstring;	
+	tag=ablaufdatum.getDate();
+	monat=(ablaufdatum.getMonth()+1);
+	jahr=ablaufdatum.getFullYear();
+	if((String(tag)).length==1)
+    tag='0'+tag;
+    if((String(monat)).length==1)
+    monat='0'+monat;
+	stunden=ablaufdatum.getHours();
+	if((String(stunden)).length==1)
+    stunden='0'+stunden;
+	minuten=ablaufdatum.getMinutes();
+	if((String(minuten)).length==1)
+    minuten='0'+minuten;
+	document.getElementsByTagName('span')[1].innerHTML = tag + '.' + monat + '.' + jahr + ' ' + stunden + ':' + minuten;	
 </script>
 
 <strong> noch 39 Stunden</strong></dd>
@@ -191,11 +209,20 @@ FOOTER{
 	ablaufdatum.setDate(ablaufdatum.getDate() + 6)
 	ablaufdatum.setHours (8);
 	ablaufdatum.setMinutes (35);
-	ablaufdatum.setSeconds(0);
-	datumstring=ablaufdatum.toLocaleString();
-	datumstring = datumstring.replace(", "," ");
-	datumstring = datumstring.replace(":00","");
-	document.getElementsByTagName('span')[2].innerHTML = datumstring;	
+	tag=ablaufdatum.getDate();
+	monat=(ablaufdatum.getMonth()+1);
+	jahr=ablaufdatum.getFullYear();
+	if((String(tag)).length==1)
+    tag='0'+tag;
+    if((String(monat)).length==1)
+    monat='0'+monat;
+	stunden=ablaufdatum.getHours();
+	if((String(stunden)).length==1)
+    stunden='0'+stunden;
+	minuten=ablaufdatum.getMinutes();
+	if((String(minuten)).length==1)
+    minuten='0'+minuten;
+	document.getElementsByTagName('span')[2].innerHTML = tag + '.' + monat + '.' + jahr + ' ' + stunden + ':' + minuten;	
 </script>
 
 <strong> noch 6 Tage</strong>
@@ -209,3 +236,6 @@ FOOTER{
 </body>
 
 </html>
+
+
+
