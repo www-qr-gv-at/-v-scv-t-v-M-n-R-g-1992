@@ -106,22 +106,106 @@ FOOTER{
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>Österreich Testet</title>
 </head>
+
 <body>
 <div id="page" class="ok">
 <h1>Prüfung: Gültig</h1>
-<main><dl>
+
+<main>
+<dl>
 <dt class="inline">Vorname:</dt>
 <dd class="inline">M</dd>
-<dt class="inline">Nachname:</dt><dd class="inline">R</dd>
-<dt class="inline">Geburtsjahr:</dt><dd class="inline">1992</dd>
-<dt>Getestet am:</dt><dd><span>17.05.2021 18:30</span><br>
-<strong> vor 22 Stunden</strong>
-</dd><dt>Eintrittstest gültig bis:</dt>
-<dd><span>19.05.2021 18:30</span><br>
-<strong> noch 26 Stunden</strong></dd>
+
+<dt class="inline">Nachname:</dt>
+<dd class="inline">R</dd>
+
+<dt class="inline">Geburtsjahr:</dt>
+<dd class="inline">1992</dd>
+
+<dt>Getestet am:</dt>
+<dd><span>06.04.2021 08:47</span><br>
+
+<script>
+	testdatum = new Date();
+	testdatum.setDate(testdatum.getDate() - 1)
+	testdatum.setHours (8);
+	testdatum.setMinutes (35);
+	testdatum.setSeconds(0);
+	datumstring=testdatum.toLocaleString();
+	datumstring = datumstring.replace(", "," ");
+	datumstring = datumstring.replace(":00","");
+	document.getElementsByTagName('span')[0].innerHTML = datumstring;	
+</script>
+
+<strong> vor 8 Stunden</strong></dd>
+
+<script>
+	testdatum = new Date();
+	testdatum.setDate(testdatum.getDate() - 1)
+	testdatum.setHours (8);
+	testdatum.setMinutes (35);
+	testdatum.setSeconds(0);
+	aktdatum = new Date();
+	aktdatum.setDate(aktdatum.getDate());
+	differenz=Math.abs(aktdatum-testdatum)
+	stunden = differenz/(1000*3600)
+	document.getElementsByTagName('strong')[0].innerHTML = 'vor ' + Math.floor(stunden) + ' Stunden';	
+</script>
+
+<dt>Eintrittstest gültig bis:</dt>
+<dd><span>08.04.2021 08:47</span><br>
+
+<script>
+	ablaufdatum = new Date();
+	ablaufdatum.setDate(ablaufdatum.getDate() + 1)
+	ablaufdatum.setHours (8);
+	ablaufdatum.setMinutes (35);
+	ablaufdatum.setSeconds(0);
+	datumstring=ablaufdatum.toLocaleString();
+	datumstring = datumstring.replace(", "," ");
+	datumstring = datumstring.replace(":00","");
+	document.getElementsByTagName('span')[1].innerHTML = datumstring;	
+</script>
+
+<strong> noch 39 Stunden</strong></dd>
+
+<script>
+	ablaufdatum = new Date();
+	ablaufdatum.setDate(ablaufdatum.getDate() + 1)
+	ablaufdatum.setHours (8);
+	ablaufdatum.setMinutes (35);
+	ablaufdatum.setSeconds(0);
+	aktdatum = new Date();
+	aktdatum.setDate(aktdatum.getDate());
+	differenz=Math.abs(ablaufdatum-aktdatum)
+	stunden = differenz/(1000*3600)
+	document.getElementsByTagName('strong')[1].innerHTML = 'vor ' + Math.floor(stunden) + ' Stunden';	
+</script>
+
 <dt>Berufsgruppentest gültig bis:</dt>
-<dd><span>24.04.2021 18:30</span><br>
+<dd>
+<span>13.04.2021 08:47</span><br>
+
+<script>
+	ablaufdatum = new Date();
+	ablaufdatum.setDate(ablaufdatum.getDate() + 6)
+	ablaufdatum.setHours (8);
+	ablaufdatum.setMinutes (35);
+	ablaufdatum.setSeconds(0);
+	datumstring=ablaufdatum.toLocaleString();
+	datumstring = datumstring.replace(", "," ");
+	datumstring = datumstring.replace(":00","");
+	document.getElementsByTagName('span')[2].innerHTML = datumstring;	
+</script>
+
 <strong> noch 6 Tage</strong>
-</dd></dl>
+</dd>
+</dl>
 </main></div>
-<footer><a href="https://oesterreich-testet.at/#/impressum">Impressum</a></footer></body></html>
+
+<footer><a href="https://oesterreich-testet.at/#/impressum">Impressum</a>
+</footer>
+
+</body>
+
+</html>
